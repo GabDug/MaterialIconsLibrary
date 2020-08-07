@@ -420,6 +420,13 @@ export const officialIconList =
         "name": "add",
         "version": 7,
         "unsupported_families": [],
+        "aliases": [
+          "add_to_drive",
+          "add_moderator",
+          "add_link",
+          "add_chart",
+          "add_call"
+        ],
         "categories": [
           "content"
         ],

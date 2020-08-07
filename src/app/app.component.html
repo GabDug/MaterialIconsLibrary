@@ -1,9 +1,38 @@
-<input type="text" [(ngModel)]="term">
-<section class="library-container">
-<!--  <app-icon-item *ngFor="let icon of officialIconList.icons | filter:term:['sizes_px', 'version', 'categories', 'unsupported_families']" [name]="icon.name">-->
+<app-header class="mat-elevation-z8"></app-header>
+<div>
+  <div style="display: flex; flex-direction: row;">
+    <section style="display: flex; flex-direction: column; border-left: 2px black;">
+      <mat-form-field floatLabel="auto">
+        <input matInput
+               placeholder="Filter by name" type="text" [(ngModel)]="term">
+      </mat-form-field>
+      <mat-nav-list>
+        <mat-list-item (click)="iconStyle=''">Regular</mat-list-item>
+        <mat-list-item (click)="iconStyle='library-outlined'">Outlined</mat-list-item>
+        <mat-list-item (click)="iconStyle='library-two-tone'">Two Tone</mat-list-item>
+        <mat-list-item (click)="iconStyle='library-sharp'">Sharp</mat-list-item>
+        <mat-list-item (click)="iconStyle='library-round'">Round</mat-list-item>
+      </mat-nav-list>
+    </section>
+    <section class="library-container" [ngClass]="iconStyle">
+      <!--      <app-icon-item-->
+      <!--        *ngFor="let icon of officialIconList.icons | filter:term:['sizes_px', 'version', 'categories', 'unsupported_families']"-->
+      <!--        [name]="icon.name">-->
+      <div *ngFor="let category of groupedByCategory">
+        <!--        <div>-->
 
-<!--  </app-icon-item>-->
-  <app-icon-item *ngFor="let icon of undocumentedIcons | filter:term" [name]="icon">
+        <!--          <span>{{category.length}} icons</span>-->
+        <!--        </div>-->
+        <app-icon-item
+          *ngFor="let icon of category | filter:term:['sizes_px', 'version', 'categories', 'unsupported_families'];let index = index "
+          [name]="icon.name"
+          [icon]="icon" [i]="index">
 
-  </app-icon-item>
-</section>
+
+        </app-icon-item>
+      </div>
+      <!--      <app-icon-item *ngFor="let icon of undocumentedIcons | filter:term" [name]="icon">-->
+
+      <!--      </app-icon-item>-->
+    </section>
+  </div>

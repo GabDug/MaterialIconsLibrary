@@ -1,6 +1,26 @@
 # NgMatIcons
 
+
+<p align="center">
+<img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/Dugnychon/MaterialIconsLibrary/main?label=version&style=flat-square">
+	<a href="https://gitmoji.carloscuesta.me">
+		<img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
+			 alt="Gitmoji">
+	</a>
+	<img alt="GitHub" src="https://img.shields.io/github/license/Dugnychon/MaterialIconsLibrary?style=flat-square">
+	<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Dugnychon/MaterialIconsLibrary/deploy/main?style=flat-square">
+</p>
+
+## About
+
+This project aims to create a simple library of all Material Icons.
+
+It is made with productivity in mind, allowing developers to easily copy icon names, and includes **undocumented** icons.
+
+## Technical stuff
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+
 
 ## Development server
 
@@ -25,3 +45,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## License
+
+The code is available under the MIT license.
