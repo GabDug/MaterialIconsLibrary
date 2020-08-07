@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
         
     - name: Angular Deploy gh-pages Actions
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.0
+      uses: Dugnychon/angular-deploy-gh-pages-actions@v1.3.0
       with:
         # Github access token token used to deploy on gh_pages. You can find it on Github.
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
