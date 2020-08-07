@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+        
+    - name: Angular Deploy gh-pages Actions
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.0
+      with:
+        # Github access token token used to deploy on gh_pages. You can find it on Github.
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        # The directory of the angular project, in which all the commands will run
+        angular_project_dir: /
+        # Build configuration for the angular app
+        build_configuration: production
+        # base href for the app
+        base_href: /
+        # branch on which the angular build will be deployed
+        deploy_branch: gh-pages
+        # The folder in which `ng build` provides its output. This is the folder which will be deployed to the `deploy_branch`.
+        angular_dist_build_folder: dist
+
