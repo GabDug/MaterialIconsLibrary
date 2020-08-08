@@ -1,7 +1,7 @@
 {
-  "name": "NgMatIcons",
-  "short_name": "NgMatIcons",
-  "theme_color": "#1976d2",
+  "name": "Material Icons Library",
+  "short_name": "MatIcons",
+  "theme_color": "#00796b",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
