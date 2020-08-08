@@ -1,25 +1,24 @@
 :host {
-  padding-top: 48px;
-  padding-bottom: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
 
-  display: flex;
-  align-content: center;
+    display: flex;
+    align-content: center;
 
-  background-color: var(--color-primary);
-  color: var(--text-on-primary-darker);
+    background-color: var(--color-primary);
+    color: var(--text-on-primary-darker);
 }
 
 .hero {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  &-content {
-    max-width: 700px;
-     h1 {
-
-       color: var(--text-on-primary);
-     }
-  }
+    &-content {
+        max-width: 700px;
+        h1 {
+            color: var(--text-on-primary);
+        }
+    }
 }

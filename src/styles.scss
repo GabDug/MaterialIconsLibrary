@@ -3,23 +3,22 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
-
 $fontConfig: (
-  font-family:
-  'Roboto,BlinkMacSystemFont,-apple-system,system-ui,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
-  display-4: mat-typography-level(112px, 112px, 300, $letter-spacing: -0.0134em),
-  display-3: mat-typography-level(56px, 56px, 400, $letter-spacing: -0.0089em),
-  display-2: mat-typography-level(45px, 48px, 400, $letter-spacing: 0em),
-  display-1: mat-typography-level(34px, 40px, 400, $letter-spacing: 0.0074em),
-  headline: mat-typography-level(24px, 32px, 400, $letter-spacing: 0em),
-  title: mat-typography-level(20px, 32px, 500, $letter-spacing: 0.0075em),
-  subheading-2: mat-typography-level(16px, 28px, 400, $letter-spacing: 0.0094em),
-  subheading-1: mat-typography-level(15px, 24px, 500, $letter-spacing: 0.0067em),
-  body-2: mat-typography-level(14px, 24px, 500, 0.0179em),
-  body-1: mat-typography-level(14px, 20px, 400, 0.0179em),
-  button: mat-typography-level(14px, 14px, 500, 0.0893em),
-  caption: mat-typography-level(12px, 20px, 400, 0.0333em),
-  input: mat-typography-level(inherit, 1.125, 400, 0.0179em),
+    font-family:
+        'Roboto,BlinkMacSystemFont,-apple-system,system-ui,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
+    display-4: mat-typography-level(112px, 112px, 300, $letter-spacing: -0.0134em),
+    display-3: mat-typography-level(56px, 56px, 400, $letter-spacing: -0.0089em),
+    display-2: mat-typography-level(45px, 48px, 400, $letter-spacing: 0em),
+    display-1: mat-typography-level(34px, 40px, 400, $letter-spacing: 0.0074em),
+    headline: mat-typography-level(24px, 32px, 400, $letter-spacing: 0em),
+    title: mat-typography-level(20px, 32px, 500, $letter-spacing: 0.0075em),
+    subheading-2: mat-typography-level(16px, 28px, 400, $letter-spacing: 0.0094em),
+    subheading-1: mat-typography-level(15px, 24px, 500, $letter-spacing: 0.0067em),
+    body-2: mat-typography-level(14px, 24px, 500, 0.0179em),
+    body-1: mat-typography-level(14px, 20px, 400, 0.0179em),
+    button: mat-typography-level(14px, 14px, 500, 0.0893em),
+    caption: mat-typography-level(12px, 20px, 400, 0.0333em),
+    input: mat-typography-level(inherit, 1.125, 400, 0.0179em),
 );
 
 // Foreground Elements
@@ -33,24 +32,23 @@ $dark-dividers: rgba($dark-primary-text, 0.12);
 $dark-focused: rgba($dark-primary-text, 0.12);
 
 $mat-light-theme-foreground: (
-  base: black,
-  divider: $dark-dividers,
-  dividers: $dark-dividers,
-  disabled: $dark-disabled-text,
-  disabled-button: rgba($dark-text, 0.26),
-  disabled-text: $dark-disabled-text,
-  elevation: black,
-  secondary-text: $dark-accent-text,
-  hint-text: $dark-disabled-text,
-  accent-text: $dark-accent-text,
-  icon: $dark-accent-text,
-  icons: $dark-accent-text,
-  text: $dark-primary-text,
-  slider-min: $dark-primary-text,
-  slider-off: rgba($dark-text, 0.26),
-  slider-off-active: $dark-disabled-text,
+    base: black,
+    divider: $dark-dividers,
+    dividers: $dark-dividers,
+    disabled: $dark-disabled-text,
+    disabled-button: rgba($dark-text, 0.26),
+    disabled-text: $dark-disabled-text,
+    elevation: black,
+    secondary-text: $dark-accent-text,
+    hint-text: $dark-disabled-text,
+    accent-text: $dark-accent-text,
+    icon: $dark-accent-text,
+    icons: $dark-accent-text,
+    text: $dark-primary-text,
+    slider-min: $dark-primary-text,
+    slider-off: rgba($dark-text, 0.26),
+    slider-off-active: $dark-disabled-text,
 );
-
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -60,7 +58,7 @@ $mat-light-theme-foreground: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$NgMatIcons-primary: mat-palette($mat-teal, 700,);
+$NgMatIcons-primary: mat-palette($mat-teal, 700);
 $NgMatIcons-accent: mat-palette($mat-blue, A400);
 
 // The warn palette is optional (defaults to red).
@@ -68,13 +66,15 @@ $NgMatIcons-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$NgMatIcons-theme: mat-light-theme((
-  color: (
-    primary: $NgMatIcons-primary,
-    accent: $NgMatIcons-accent,
-    warn: $NgMatIcons-warn,
-  )
-));
+$NgMatIcons-theme: mat-light-theme(
+    (
+        color: (
+            primary: $NgMatIcons-primary,
+            accent: $NgMatIcons-accent,
+            warn: $NgMatIcons-warn,
+        ),
+    )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -83,39 +83,39 @@ $NgMatIcons-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
-  height: 100%;
+html,
+body {
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  --color-primary: #{map-get($NgMatIcons-primary, 'default')};
-  --text-on-primary: #fff;
-  --text-on-primary-darker: #e5e5e5;
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    --color-primary: #{map-get($NgMatIcons-primary, 'default')};
+    --text-on-primary: #fff;
+    --text-on-primary-darker: #e5e5e5;
 }
 
-
 .library-outlined {
-  .mat-icon {
-    font-family: 'Material Icons Outlined' !important;
-  }
+    .mat-icon {
+        font-family: 'Material Icons Outlined' !important;
+    }
 }
 
 .library-two-tone {
-  .mat-icon {
-    font-family: 'Material Icons Two Tone' !important;
-  }
+    .mat-icon {
+        font-family: 'Material Icons Two Tone' !important;
+    }
 }
 
 .library-rounded {
-  .mat-icon {
-    font-family: 'Material Icons Round' !important;
-  }
+    .mat-icon {
+        font-family: 'Material Icons Round' !important;
+    }
 }
 
 .library-sharp {
-  .mat-icon {
-    font-family: 'Material Icons Sharp' !important;
-  }
+    .mat-icon {
+        font-family: 'Material Icons Sharp' !important;
+    }
 }

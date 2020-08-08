@@ -1,15 +1,15 @@
 .library-container {
-  max-width: 1440px;
-  //margin-left: auto;
-  margin-right: auto;
-  padding-left: 48px;
-  padding-right: 48px;
+    max-width: 1440px;
+    //margin-left: auto;
+    margin-right: auto;
+    padding-left: 48px;
+    padding-right: 48px;
 }
 
 .category_name {
-  &:only-child {
-    visibility: hidden;
-  }
+    &:only-child {
+        visibility: hidden;
+    }
 }
 
 .mat-nav-list {
@@ -19,6 +19,6 @@
     }
 }
 
-.category-group:first-of-type{
+.category-group:first-of-type {
     margin-top: 16px;
 }
