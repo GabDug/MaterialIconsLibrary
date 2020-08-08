@@ -24,6 +24,6 @@ export class IconItemComponent implements OnInit {
         console.log(text);
 
         this.clipboard.copy(text);
-        this.snackBar.open(`Icon name '${text}' copied to clipboard!`);
+        this.snackBar.open(`Icon name '${text}' copied to clipboard!`, undefined, { duration: 5000 });
     }
 }
