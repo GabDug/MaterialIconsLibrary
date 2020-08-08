@@ -11,3 +11,14 @@
     visibility: hidden;
   }
 }
+
+.mat-nav-list {
+    transition: background-color ease 200ms;
+    .active-theme {
+        background: #48a697;
+    }
+}
+
+.category-group:first-of-type{
+    margin-top: 16px;
+}

@@ -1,0 +1,9 @@
+coverage
+dist
+e2e
+
+package-lock.json
+node_modules
+
+.gitlab-ci.yml
+.gitlab-ci.*.yml

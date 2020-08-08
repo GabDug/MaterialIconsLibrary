@@ -16,6 +16,7 @@ import {HeaderComponent} from './header/header.component';
 import {MatListModule} from "@angular/material/list";
 import {FooterComponent} from './footer/footer.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -25,17 +26,18 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     HeaderComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    MatIconModule,
-    FormsModule,
-    MatInputModule,
-    MatListModule,
-    ClipboardModule,
-    MatSnackBarModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        MatIconModule,
+        FormsModule,
+        MatInputModule,
+        MatListModule,
+        ClipboardModule,
+        MatSnackBarModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

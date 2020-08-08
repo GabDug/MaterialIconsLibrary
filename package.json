@@ -29,6 +29,8 @@
     "@angular/router": "~10.0.5",
     "@angular/service-worker": "~10.0.5",
     "ng2-search-filter": "^0.5.1",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "rxjs": "~6.6.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

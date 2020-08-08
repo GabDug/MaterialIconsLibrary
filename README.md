@@ -8,7 +8,9 @@
 			 alt="Gitmoji">
 	</a>
 	<img alt="GitHub" src="https://img.shields.io/github/license/Dugnychon/MaterialIconsLibrary?style=flat-square">
-	<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Dugnychon/MaterialIconsLibrary/deploy/main?style=flat-square">
+	<a href="#badge">
+        <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square"></a>
+	<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/dugnychon/MaterialIconsLibrary/Build%20&%20Deploy?style=flat-square">
 </p>
 
 ## About

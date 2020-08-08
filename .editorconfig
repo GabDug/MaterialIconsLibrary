@@ -2,15 +2,27 @@
 root = true
 
 [*]
-charset = utf-8
-indent_style = space
-indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+max_line_length = 120
+tab_width = 4
+ij_continuation_indent_size = 4
 
-[*.ts]
+[{*.md, *.markdown}]
+max_line_length = 80
+trim_trailing_whitespace = false
+
+[{*.ts, *.ats}]
+max_line_length = 140
 quote_type = single
 
-[*.md]
-max_line_length = off
-trim_trailing_whitespace = false
+[{*.yml, *.yaml}]
+indent_size = 2
+
+[{*.bash, *.zsh, *.sh}]
+indent_size = 2
+tab_width = 2
