@@ -3,6 +3,7 @@ import { officialIconList } from './official_icon_list';
 import { allIconsList } from './all_icon_list';
 import { from } from 'rxjs';
 import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-root',
@@ -16,10 +17,25 @@ export class AppComponent implements OnInit {
     allIconDetails;
     term: string;
     undocumentedIcons: string[] = [];
-    iconStyle: string;
+
     groupedByCategory: any[];
 
+    // Filters
+    iconStyle = '';
+    category = '';
+
+    isSmallScreen: boolean;
+
+    constructor(private breakpointObserver: BreakpointObserver) {}
+
     ngOnInit() {
+        // this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
+        this.breakpointObserver
+            .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
+            .subscribe((state: BreakpointState) => {
+                this.isSmallScreen = state.matches;
+            });
+
         let officialIconNames = officialIconList.icons.map(x => x.name);
         console.log(officialIconNames);
         this.undocumentedIcons = officialIconNames
@@ -28,7 +44,7 @@ export class AppComponent implements OnInit {
         console.log(this.undocumentedIcons);
 
         this.undocumentedIcons.forEach(x => {
-            this.officialIconList.icons.push({ name: x, categories: ['Undocumented'] } as any);
+            this.officialIconList.icons.push({ name: x, categories: ['undocumented'] } as any);
         });
         let iconsSource = from(this.officialIconList.icons);
         let groupedByCategory$ = iconsSource.pipe(
@@ -46,6 +62,9 @@ export class AppComponent implements OnInit {
 }
 
 const sortIconGroupAlphabetically = (a, b) => {
+    if (a[0].categories[0] === 'undocumented') {
+        return -1;
+    }
     if (a[0].categories[0] < b[0].categories[0]) return -1;
     if (a[0].categories[0] > b[0].categories[0]) return 1;
     return 0;

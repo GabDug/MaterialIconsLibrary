@@ -6,6 +6,8 @@
     text-align: center;
     user-select: none;
 
+    border-radius: 8px;
+
     transition: all 0.25s ease-out;
 
     &:hover {
@@ -34,6 +36,8 @@
     text-overflow: ellipsis;
 
     cursor: pointer;
+
+    border-radius: 4px;
 
     transition-duration: 0.3s;
 

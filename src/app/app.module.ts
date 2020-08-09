@@ -17,9 +17,11 @@ import { MatListModule } from '@angular/material/list';
 import { FooterComponent } from './footer/footer.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { FilterCategoryPipe } from './filter-category.pipe';
 
 @NgModule({
-    declarations: [AppComponent, IconItemComponent, FilterPipe, HeaderComponent, FooterComponent],
+    declarations: [AppComponent, IconItemComponent, FilterPipe, HeaderComponent, FooterComponent, FilterCategoryPipe],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -31,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
         ClipboardModule,
         MatSnackBarModule,
         MatButtonModule,
+        MatSelectModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
