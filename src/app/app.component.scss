@@ -22,6 +22,9 @@
     transition: background-color ease 200ms;
     .mat-list-item {
         border-radius: 8px;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
     }
 
     .active-theme {

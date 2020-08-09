@@ -6,6 +6,7 @@
         </mat-form-field>
         <div style="display: flex; flex-direction: row;">
             <mat-form-field style="flex-grow: 1; margin-right: 6px;">
+                <mat-label>Theme</mat-label>
                 <mat-select [(ngModel)]="iconStyle">
                     <mat-option value="">Regular</mat-option>
                     <mat-option value="library-outlined">Outlined</mat-option>
@@ -15,6 +16,7 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field style="flex-grow: 1; margin-left: 6px;">
+                <mat-label>Category</mat-label>
                 <mat-select [(ngModel)]="category">
                     <mat-option value="">All</mat-option>
                     <mat-option value="undocumented">Undocumented</mat-option>
@@ -42,9 +44,13 @@
     <div style="display: flex; flex-direction: row;">
         <section *ngIf="!isSmallScreen" style="display: flex; flex-direction: column; margin-top: 16px; margin: 12px;">
             <mat-form-field floatLabel="auto" style="margin-left: 8px; margin-right: 8px;">
+                <button mat-icon-button matPrefix>
+                    <mat-icon>search</mat-icon>
+                </button>
                 <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
             </mat-form-field>
             <mat-nav-list>
+                <h3>Theme</h3>
                 <mat-list-item (click)="iconStyle = ''" [class.active-theme]="iconStyle === ''">Regular</mat-list-item>
                 <mat-list-item
                     (click)="iconStyle = 'library-outlined'"
@@ -67,6 +73,30 @@
                     >Round
                 </mat-list-item>
             </mat-nav-list>
+            <mat-form-field style="flex-grow: 1; margin-left: 6px;">
+                <h3>Category</h3>
+                <mat-select [(ngModel)]="category">
+                    <mat-option value="">All</mat-option>
+                    <mat-option value="undocumented">Undocumented</mat-option>
+                    <mat-option value="action">Action</mat-option>
+                    <mat-option value="alert">Alert</mat-option>
+                    <mat-option value="av">Av</mat-option>
+                    <mat-option value="communication">Communication</mat-option>
+                    <mat-option value="content">Content</mat-option>
+                    <mat-option value="device">Device</mat-option>
+                    <mat-option value="editor">Editor</mat-option>
+                    <mat-option value="file">File</mat-option>
+                    <mat-option value="hardware">Hardware</mat-option>
+                    <mat-option value="home">Home</mat-option>
+                    <mat-option value="image">Image</mat-option>
+                    <mat-option value="maps">Maps</mat-option>
+                    <mat-option value="navigation">Navigation</mat-option>
+                    <mat-option value="notifications">Notification</mat-option>
+                    <mat-option value="places">Places</mat-option>
+                    <mat-option value="social">Social</mat-option>
+                    <mat-option value="toggle">Toggle</mat-option>
+                </mat-select>
+            </mat-form-field>
         </section>
         <section [class.is-small]="isSmallScreen" [ngClass]="iconStyle" class="library-container">
             <div *ngFor="let category of groupedByCategory | filterCategory: category" class="category-group">

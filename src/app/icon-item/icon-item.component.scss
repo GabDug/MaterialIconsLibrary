@@ -28,7 +28,7 @@
     display: block;
     max-width: 112px;
     margin-top: 8px;
-    padding: 4px 7px 0 7px;
+    padding: 4px 8px 2px 8px;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
     white-space: nowrap;
@@ -42,8 +42,9 @@
     transition-duration: 0.3s;
 
     &:hover {
-        background-color: rgba(186, 186, 186, 0.3);
-        box-shadow: 0 4px rgba(148, 148, 148, 0.6);
+        color: white;
+        background-color: rgb(0, 121, 107);
+        box-shadow: 0 4px rgb(3, 162, 143);
     }
 }
 
