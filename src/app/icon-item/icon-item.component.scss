@@ -6,6 +6,8 @@
     text-align: center;
     user-select: none;
 
+    cursor: pointer;
+
     border-radius: 8px;
 
     transition: all 0.25s ease-out;
@@ -35,17 +37,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    cursor: pointer;
-
     border-radius: 4px;
-
-    transition-duration: 0.3s;
-
-    &:hover {
-        color: white;
-        background-color: rgb(0, 121, 107);
-        box-shadow: 0 4px rgb(3, 162, 143);
-    }
 }
 
 .icon-item-preview {
@@ -54,6 +46,4 @@
     width: 48px;
     height: 48px;
     overflow: hidden;
-
-    cursor: pointer;
 }

@@ -1,6 +1,6 @@
-<div class="icon-item-container">
+<div class="icon-item-container" (click)="copyToClipboard(icon.name)">
     <div class="icon-item-inner-container">
-        <mat-icon class="icon-item-preview" (click)="copyToClipboard(icon.name)">{{ icon.name }}</mat-icon>
-        <span class="icon-item-title" (click)="copyToClipboard(icon.name)">{{ icon.name }}</span>
+        <mat-icon class="icon-item-preview">{{ icon.name }}</mat-icon>
+        <span class="icon-item-title">{{ icon.name }}</span>
     </div>
 </div>
