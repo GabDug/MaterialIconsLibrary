@@ -1,8 +1,6 @@
 .library-container {
-    max-width: 1440px;
-    margin-right: auto;
-    padding-left: 36px;
-    padding-right: 36px;
+    margin-left: 36px;
+    flex-grow: 1;
 
     &.is-small {
         margin-left: auto;
@@ -13,8 +11,14 @@
 }
 
 .category_name {
+    width: 100%;
+
     &:only-child {
         visibility: hidden;
+    }
+
+    &:first-of-type {
+        margin-top: 16px;
     }
 }
 
@@ -33,6 +37,12 @@
     }
 }
 
-.category-group:first-of-type {
-    margin-top: 16px;
+.category-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 136px);
+
+    &::after {
+        content: "";
+        flex: auto;
+    }
 }
