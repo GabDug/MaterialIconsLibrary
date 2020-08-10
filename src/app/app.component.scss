@@ -1,12 +1,13 @@
 .library-container {
+    margin-top: 24px;
     margin-left: 36px;
     flex-grow: 1;
 
     &.is-small {
+        margin-top: -4px;
         margin-left: auto;
         padding-left: 16px;
         padding-right: 16px;
-        margin-top: -20px;
     }
 }
 
@@ -15,10 +16,6 @@
 
     &:only-child {
         visibility: hidden;
-    }
-
-    &:first-of-type {
-        margin-top: 16px;
     }
 }
 
