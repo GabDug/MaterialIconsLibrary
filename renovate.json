@@ -1,5 +1,45 @@
 {
-  "extends": [
-    "config:base"
-  ]
+    "pinVersions": false,
+    "supportPolicy": ["active"],
+    "semanticCommits": true,
+    "semanticPrefix": "build",
+    "separateMajorMinor": false,
+    "prHourlyLimit": 2,
+    "timezone": "Europe/Paris",
+    "lockFileMaintenance": {
+        "enabled": true
+    },
+    "schedule": ["after 4am every day", "before 6am every day"],
+    "baseBranches": ["main"],
+    "ignoreDeps": ["@types/node"],
+    "packageFiles": ["package.json"],
+    "major": {
+        "devDependencies": {
+            "enabled": true
+        }
+    },
+    "packageRules": [
+        {
+            "packagePatterns": ["^@angular/.*"],
+            "groupName": "angular",
+            "pinVersions": false
+        },
+
+        {
+            "packageNames": ["typescript"],
+            "separateMinorPatch": true
+        },
+        {
+            "packageNames": ["typescript"],
+            "updateTypes": ["minor", "major"],
+            "enabled": false
+        },
+        {
+            "depTypeList": ["devDependencies"],
+            "updateTypes": ["patch", "minor"],
+            "groupName": "non-major devDependencies",
+            "excludePackagePatterns": ["typescript", "^@angular/.*"]
+        }
+    ],
+    "extends": ["config:base"]
 }
