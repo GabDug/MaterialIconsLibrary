@@ -28,7 +28,6 @@
         "@angular/platform-browser-dynamic": "~10.0.5",
         "@angular/router": "~10.0.5",
         "@angular/service-worker": "~10.0.5",
-        "ng2-search-filter": "^0.5.1",
         "prettier": "^2.0.5",
         "pretty-quick": "^2.0.1",
         "rxjs": "~6.6.2",

@@ -8,7 +8,6 @@ import { environment } from '../environments/environment';
 import { MatIconModule } from '@angular/material/icon';
 import { IconItemComponent } from './icon-item/icon-item.component';
 import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipe } from './filter.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { ClipboardModule } from '@angular/cdk/clipboard';
