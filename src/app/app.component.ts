@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
     constructor(private breakpointObserver: BreakpointObserver) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         // this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
         this.breakpointObserver
             .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
                 this.isSmallScreen = state.matches;
             });
 
-        let officialIconNames = officialIconList.icons.map(x => x.name);
+        const officialIconNames = officialIconList.icons.map(x => x.name);
         console.log(officialIconNames);
         this.undocumentedIcons = officialIconNames
             .filter(x => !allIconsList.includes(x))
@@ -46,8 +46,8 @@ export class AppComponent implements OnInit {
         this.undocumentedIcons.forEach(x => {
             this.officialIconList.icons.push({ name: x, categories: ['undocumented'] } as any);
         });
-        let iconsSource = from(this.officialIconList.icons);
-        let groupedByCategory$ = iconsSource.pipe(
+        const iconsSource = from(this.officialIconList.icons);
+        const groupedByCategory$ = iconsSource.pipe(
             groupBy(icon => icon.categories[0]),
             mergeMap(category => category.pipe(toArray())),
             toArray(),
@@ -65,7 +65,11 @@ const sortIconGroupAlphabetically = (a, b) => {
     if (a[0].categories[0] === 'undocumented') {
         return -1;
     }
-    if (a[0].categories[0] < b[0].categories[0]) return -1;
-    if (a[0].categories[0] > b[0].categories[0]) return 1;
+    if (a[0].categories[0] < b[0].categories[0]) {
+        return -1;
+    }
+    if (a[0].categories[0] > b[0].categories[0]) {
+        return 1;
+    }
     return 0;
 };

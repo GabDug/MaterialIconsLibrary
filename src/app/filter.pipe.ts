@@ -7,17 +7,6 @@ import { Pipe, PipeTransform, Injectable } from '@angular/core';
 @Injectable()
 export class FilterPipe implements PipeTransform {
     /**
-     * @param items object from array
-     * @param term term's search
-     * @param excludes array of strings which will ignored during search
-     */
-    transform(items: any, term: string, excludes: any = []): any {
-        if (!term || !items) return items;
-
-        return FilterPipe.filter(items, term, excludes);
-    }
-
-    /**
      *
      * @param items List of items to filter
      * @param term  a string term to compare with every property of the list
@@ -27,17 +16,17 @@ export class FilterPipe implements PipeTransform {
     static filter(items: Array<{ [key: string]: any }>, term: string, excludes: any): Array<{ [key: string]: any }> {
         const toCompare = term.toLowerCase();
 
-        function checkInside(item: any, term: string) {
+        function checkInside(item: any, termToSearch: string): boolean {
             if (typeof item === 'string' && item.toString().toLowerCase().includes(toCompare)) {
                 return true;
             }
 
-            for (let property in item) {
-                if (item[property] === null || item[property] == undefined || excludes.includes(property)) {
+            for (const property in item) {
+                if (item[property] === null || item[property] === undefined || excludes.includes(property)) {
                     continue;
                 }
                 if (typeof item[property] === 'object') {
-                    if (checkInside(item[property], term)) {
+                    if (checkInside(item[property], termToSearch)) {
                         return true;
                     }
                 } else if (item[property].toString().toLowerCase().includes(toCompare)) {
@@ -47,8 +36,18 @@ export class FilterPipe implements PipeTransform {
             return false;
         }
 
-        return items.filter(function (item) {
-            return checkInside(item, term);
-        });
+        return items.filter(item => checkInside(item, term));
+    }
+    /**
+     * @param items object from array
+     * @param term term's search
+     * @param excludes array of strings which will ignored during search
+     */
+    transform(items: any, term: string, excludes: any = []): any {
+        if (!term || !items) {
+            return items;
+        }
+
+        return FilterPipe.filter(items, term, excludes);
     }
 }

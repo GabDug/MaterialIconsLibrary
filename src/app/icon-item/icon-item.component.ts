@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Clipboard } from '@angular/cdk/clipboard';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import iconItem from '../icon';
+import IconItem from '../icon';
 
 @Component({
     selector: 'app-icon-item',
@@ -11,7 +11,7 @@ import iconItem from '../icon';
 })
 export class IconItemComponent implements OnInit {
     @Input() name: string;
-    @Input() icon: iconItem;
+    @Input() icon: IconItem;
     @Input() i: number;
 
     constructor(private clipboard: Clipboard, private snackBar: MatSnackBar) {}
