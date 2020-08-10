@@ -41,7 +41,10 @@
             </mat-form-field>
         </div>
     </div>
-    <div style="display: flex; flex-direction: row;" [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px' }">
+    <div
+        style="display: flex; flex-direction: row;"
+        [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px' }"
+    >
         <section *ngIf="!isSmallScreen" style="display: flex; flex-direction: column; margin-top: 16px; margin: 12px;">
             <mat-form-field floatLabel="never" style="margin-left: 8px; margin-right: 8px;">
                 <button mat-icon-button matPrefix>
@@ -104,7 +107,10 @@
                 <!--        <div>-->
                 <!--          <span>{{category.length}} icons</span>-->
                 <!--        </div>-->
-                <div class="category-group" [ngStyle]="{ 'justify-content': isSmallScreen ? 'space-around' : 'space-between' }">
+                <div
+                    class="category-group"
+                    [ngStyle]="{ 'justify-content': isSmallScreen ? 'space-around' : 'space-between' }"
+                >
                     <app-icon-item
                         *ngFor="
                             let icon of category
