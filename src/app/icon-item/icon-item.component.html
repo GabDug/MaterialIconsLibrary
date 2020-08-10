@@ -1,7 +1,6 @@
-<h2 *ngIf="i === 0" class="category_name">{{ icon.categories[0] | titlecase }}</h2>
-<div class="icon-item-container">
+<div class="icon-item-container" (click)="copyToClipboard(icon.name)">
     <div class="icon-item-inner-container">
-        <mat-icon class="icon-item-preview" (click)="copyToClipboard(icon.name)">{{ icon.name }}</mat-icon>
-        <span class="icon-item-title" (click)="copyToClipboard(icon.name)">{{ icon.name }}</span>
+        <mat-icon class="icon-item-preview">{{ icon.name }}</mat-icon>
+        <span class="icon-item-title">{{ icon.name }}</span>
     </div>
 </div>

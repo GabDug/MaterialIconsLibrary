@@ -5,7 +5,7 @@
             <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
         </mat-form-field>
         <div style="display: flex; flex-direction: row;">
-            <mat-form-field style="flex-grow: 1; margin-right: 6px;">
+            <mat-form-field style="width: calc(50% - 6px); margin-right: 6px;">
                 <mat-label>Theme</mat-label>
                 <mat-select [(ngModel)]="iconStyle">
                     <mat-option value="">Regular</mat-option>
@@ -15,7 +15,7 @@
                     <mat-option value="library-round">Rounded</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field style="flex-grow: 1; margin-left: 6px;">
+            <mat-form-field style="width: calc(50% - 6px); margin-left: 6px;">
                 <mat-label>Category</mat-label>
                 <mat-select [(ngModel)]="category">
                     <mat-option value="">All</mat-option>
@@ -41,9 +41,9 @@
             </mat-form-field>
         </div>
     </div>
-    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row;" [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px' }">
         <section *ngIf="!isSmallScreen" style="display: flex; flex-direction: column; margin-top: 16px; margin: 12px;">
-            <mat-form-field floatLabel="auto" style="margin-left: 8px; margin-right: 8px;">
+            <mat-form-field floatLabel="never" style="margin-left: 8px; margin-right: 8px;">
                 <button mat-icon-button matPrefix>
                     <mat-icon>search</mat-icon>
                 </button>
@@ -99,21 +99,24 @@
             </mat-form-field>
         </section>
         <section [class.is-small]="isSmallScreen" [ngClass]="iconStyle" class="library-container">
-            <div *ngFor="let category of groupedByCategory | filterCategory: category" class="category-group">
+            <div *ngFor="let category of groupedByCategory | filterCategory: category">
+                <h2 class="category_name">{{ category[0].categories[0] | titlecase }}</h2>
                 <!--        <div>-->
                 <!--          <span>{{category.length}} icons</span>-->
                 <!--        </div>-->
-                <app-icon-item
-                    *ngFor="
-                        let icon of category
-                            | filter: term:['sizes_px', 'version', 'categories', 'unsupported_families'];
-                        let index = index
-                    "
-                    [i]="index"
-                    [icon]="icon"
-                    [name]="icon.name"
-                >
-                </app-icon-item>
+                <div class="category-group" [ngStyle]="{ 'justify-content': isSmallScreen ? 'space-around' : 'space-between' }">
+                    <app-icon-item
+                        *ngFor="
+                            let icon of category
+                                | filter: term:['sizes_px', 'version', 'categories', 'unsupported_families'];
+                            let index = index
+                        "
+                        [i]="index"
+                        [icon]="icon"
+                        [name]="icon.name"
+                    >
+                    </app-icon-item>
+                </div>
             </div>
         </section>
     </div>
