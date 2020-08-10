@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
 
 const sortIconGroupAlphabetically = (a, b) => {
     if (a[0].categories[0] === 'undocumented') {
-        return -1;
+        return 0;
     }
     if (a[0].categories[0] < b[0].categories[0]) {
         return -1;

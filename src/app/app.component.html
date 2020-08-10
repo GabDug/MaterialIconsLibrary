@@ -42,8 +42,8 @@
         </div>
     </div>
     <div
-        style="display: flex; flex-direction: row;"
         [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px' }"
+        style="display: flex; flex-direction: row;"
     >
         <section *ngIf="!isSmallScreen" style="display: flex; flex-direction: column; margin-top: 16px; margin: 12px;">
             <mat-form-field floatLabel="never" style="margin-left: 8px; margin-right: 8px;">
@@ -101,29 +101,12 @@
                 </mat-select>
             </mat-form-field>
         </section>
-        <section [class.is-small]="isSmallScreen" [ngClass]="iconStyle" class="library-container">
-            <div *ngFor="let category of groupedByCategory | filterCategory: category">
-                <h2 class="category_name">{{ category[0].categories[0] | titlecase }}</h2>
-                <!--        <div>-->
-                <!--          <span>{{category.length}} icons</span>-->
-                <!--        </div>-->
-                <div
-                    class="category-group"
-                    [ngStyle]="{ 'justify-content': isSmallScreen ? 'space-around' : 'space-between' }"
-                >
-                    <app-icon-item
-                        *ngFor="
-                            let icon of category
-                                | filter: term:['sizes_px', 'version', 'categories', 'unsupported_families'];
-                            let index = index
-                        "
-                        [i]="index"
-                        [icon]="icon"
-                        [name]="icon.name"
-                    >
-                    </app-icon-item>
-                </div>
-            </div>
+        <section [class.is-small]="isSmallScreen" [ngClass]="iconStyle" style="width: 100%;">
+            <app-icon-container
+                *ngFor="let category of groupedByCategory | filterCategory: category"
+                [items]="category"
+                [term]="term"
+            ></app-icon-container>
         </section>
     </div>
 </div>
