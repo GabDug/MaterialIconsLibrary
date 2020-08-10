@@ -5,7 +5,7 @@
             <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
         </mat-form-field>
         <div style="display: flex; flex-direction: row;">
-            <mat-form-field style="flex-grow: 1; margin-right: 6px;">
+            <mat-form-field style="width: calc(50% - 6px); margin-right: 6px;">
                 <mat-label>Theme</mat-label>
                 <mat-select [(ngModel)]="iconStyle">
                     <mat-option value="">Regular</mat-option>
@@ -15,7 +15,7 @@
                     <mat-option value="library-round">Rounded</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field style="flex-grow: 1; margin-left: 6px;">
+            <mat-form-field style="width: calc(50% - 6px); margin-left: 6px;">
                 <mat-label>Category</mat-label>
                 <mat-select [(ngModel)]="category">
                     <mat-option value="">All</mat-option>
