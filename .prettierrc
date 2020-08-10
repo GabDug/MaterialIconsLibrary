@@ -22,6 +22,15 @@
             "options": {
                 "tabWidth": 1
             }
+        } , {
+            "files":  [
+                "*.scss",
+                "*.sass",
+                "*.css"
+            ],
+            "options": {
+                "tabWidth": 2
+            }
         }
     ]
 }

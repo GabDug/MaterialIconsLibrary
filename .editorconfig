@@ -23,6 +23,9 @@ quote_type = single
 [{*.yml, *.yaml}]
 indent_size = 2
 
+[{*.css, *.scss, *.sass}]
+indent_size = 2
+
 [{*.bash, *.zsh, *.sh}]
 indent_size = 2
 tab_width = 2
