@@ -1,0 +1,14 @@
+<div *ngIf="items.length > 0" class="library-container">
+    <h2>{{ items[0].categories[0] | titlecase }}</h2>
+    <div class="category-group">
+        <app-icon-item
+            *ngFor="
+                let icon of items | filter: term:['sizes_px', 'version', 'categories', 'unsupported_families'];
+                let index = index
+            "
+            [i]="index"
+            [icon]="icon"
+            [name]="icon.name"
+        ></app-icon-item>
+    </div>
+</div>

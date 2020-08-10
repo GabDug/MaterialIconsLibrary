@@ -18,9 +18,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterCategoryPipe } from './filter-category.pipe';
+import { IconContainerComponent } from './icon-container/icon-container.component';
 
 @NgModule({
-    declarations: [AppComponent, IconItemComponent, FilterPipe, HeaderComponent, FooterComponent, FilterCategoryPipe],
+    declarations: [
+        AppComponent,
+        IconItemComponent,
+        FilterPipe,
+        HeaderComponent,
+        FooterComponent,
+        FilterCategoryPipe,
+        IconContainerComponent,
+    ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,

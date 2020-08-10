@@ -1,0 +1,37 @@
+.category-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 136px);
+  justify-content: space-between;
+
+  &::after {
+    content: '';
+    flex: auto;
+  }
+}
+
+.category_name {
+  width: 100%;
+
+  &:only-child {
+    visibility: hidden;
+  }
+}
+
+.library-container {
+  margin-top: 24px;
+  margin-left: 36px;
+  flex-grow: 1;
+}
+
+:host-context(.is-small) {
+  .category-group {
+    justify-content: space-around;
+  }
+
+  .library-container {
+    margin-top: -4px;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
