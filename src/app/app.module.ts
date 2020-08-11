@@ -31,7 +31,7 @@ import { IconContainerComponent } from './icon-container/icon-container.componen
         IconContainerComponent,
     ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserAnimationsModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         MatIconModule,
