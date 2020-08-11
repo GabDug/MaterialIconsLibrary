@@ -37,11 +37,11 @@ export class AppComponent implements OnInit {
             });
 
         const officialIconNames = officialIconList.icons.map(x => x.name);
-        console.log(officialIconNames);
+        // console.log(officialIconNames);
         this.undocumentedIcons = officialIconNames
             .filter(x => !allIconsList.includes(x))
             .concat(allIconsList.filter(x => !officialIconNames.includes(x)));
-        console.log(this.undocumentedIcons);
+        // console.log(this.undocumentedIcons);
 
         this.undocumentedIcons.forEach(x => {
             this.officialIconList.icons.push({ name: x, categories: ['undocumented'] } as any);
@@ -56,14 +56,16 @@ export class AppComponent implements OnInit {
 
         groupedByCategory$.subscribe(x => {
             this.groupedByCategory = x;
-            console.log(x);
+            // console.log(x);
         });
     }
 }
 
 const sortIconGroupAlphabetically = (a, b) => {
-    if (a[0].categories[0] === 'undocumented' || b[0].categories[0] === 'undocumented') {
-
+    if (a[0].categories[0] === 'undocumented') {
+        return -1;
+    }
+    if (b[0].categories[0] === 'undocumented') {
         return 1;
     }
     if (a[0].categories[0] < b[0].categories[0]) {
