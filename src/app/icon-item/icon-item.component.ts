@@ -19,9 +19,8 @@ export class IconItemComponent implements OnInit {
     ngOnInit(): void {}
 
     copyToClipboard(text: string): void {
-        // TODO Snackbar copied to clipboard!
-        console.log('Copied!');
-        console.log(text);
+        // console.log('Copied!');
+        // console.log(text);
 
         this.clipboard.copy(text);
         this.snackBar.open(`Icon name '${text}' copied to clipboard!`, undefined, { duration: 5000 });
