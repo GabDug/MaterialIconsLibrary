@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { officialIconList } from './official_icon_list';
 import { allIconsList } from './all_icon_list';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
             this.officialIconList.icons.push({ name: x, categories: ['undocumented'] } as any);
         });
         const iconsSource = from(this.officialIconList.icons);
-        const groupedByCategory$ = iconsSource.pipe(
+        const groupedByCategory$: Observable<any[]> = iconsSource.pipe(
             groupBy(icon => icon.categories[0]),
             mergeMap(category => category.pipe(toArray())),
             toArray(),
@@ -62,8 +62,9 @@ export class AppComponent implements OnInit {
 }
 
 const sortIconGroupAlphabetically = (a, b) => {
-    if (a[0].categories[0] === 'undocumented') {
-        return 0;
+    if (a[0].categories[0] === 'undocumented' || b[0].categories[0] === 'undocumented') {
+
+        return 1;
     }
     if (a[0].categories[0] < b[0].categories[0]) {
         return -1;
