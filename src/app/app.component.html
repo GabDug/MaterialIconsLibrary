@@ -1,11 +1,66 @@
 <app-header class="mat-elevation-z8"></app-header>
-<div>
-    <div *ngIf="isSmallScreen" style="padding: 16px;">
-        <mat-form-field floatLabel="auto" style="display: block;">
+<div
+    [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px', 'flex-direction': 'row' }"
+    class="main-container"
+>
+    <section *ngIf="!isSmallScreen" class="filter-container">
+        <mat-form-field class="filter-search-field" floatLabel="never">
+            <button mat-icon-button matPrefix>
+                <mat-icon>search</mat-icon>
+            </button>
             <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
         </mat-form-field>
-        <div style="display: flex; flex-direction: row;">
-            <mat-form-field style="width: calc(50% - 6px); margin-right: 6px;">
+        <mat-nav-list>
+            <h3>Theme</h3>
+            <mat-list-item (click)="iconStyle = ''" [class.active-theme]="iconStyle === ''">Regular</mat-list-item>
+            <mat-list-item
+                (click)="iconStyle = 'library-outlined'"
+                [class.active-theme]="iconStyle === 'library-outlined'"
+                >Outlined
+            </mat-list-item>
+            <mat-list-item (click)="iconStyle = 'library-sharp'" [class.active-theme]="iconStyle === 'library-sharp'"
+                >Sharp
+            </mat-list-item>
+            <mat-list-item
+                (click)="iconStyle = 'library-two-tone'"
+                [class.active-theme]="iconStyle === 'library-two-tone'"
+                >Two Tone
+            </mat-list-item>
+            <mat-list-item (click)="iconStyle = 'library-round'" [class.active-theme]="iconStyle === 'library-round'"
+                >Round
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-form-field class="filter-category-field">
+            <h3>Category</h3>
+            <mat-select [(ngModel)]="category">
+                <mat-option value="">All</mat-option>
+                <mat-option value="undocumented">Undocumented</mat-option>
+                <mat-option value="action">Action</mat-option>
+                <mat-option value="alert">Alert</mat-option>
+                <mat-option value="av">Av</mat-option>
+                <mat-option value="communication">Communication</mat-option>
+                <mat-option value="content">Content</mat-option>
+                <mat-option value="device">Device</mat-option>
+                <mat-option value="editor">Editor</mat-option>
+                <mat-option value="file">File</mat-option>
+                <mat-option value="hardware">Hardware</mat-option>
+                <mat-option value="home">Home</mat-option>
+                <mat-option value="image">Image</mat-option>
+                <mat-option value="maps">Maps</mat-option>
+                <mat-option value="navigation">Navigation</mat-option>
+                <mat-option value="notifications">Notification</mat-option>
+                <mat-option value="places">Places</mat-option>
+                <mat-option value="social">Social</mat-option>
+                <mat-option value="toggle">Toggle</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+    <section *ngIf="isSmallScreen" class="filter-container-small">
+        <mat-form-field class="filter-search-field" floatLabel="auto">
+            <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
+        </mat-form-field>
+        <div class="filter-row">
+            <mat-form-field class="filter-theme-field">
                 <mat-label>Theme</mat-label>
                 <mat-select [(ngModel)]="iconStyle">
                     <mat-option value="">Regular</mat-option>
@@ -15,7 +70,7 @@
                     <mat-option value="library-round">Rounded</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field style="width: calc(50% - 6px); margin-left: 6px;">
+            <mat-form-field class="filter-category-field">
                 <mat-label>Category</mat-label>
                 <mat-select [(ngModel)]="category">
                     <mat-option value="">All</mat-option>
@@ -40,73 +95,12 @@
                 </mat-select>
             </mat-form-field>
         </div>
-    </div>
-    <div
-        [ngStyle]="!isSmallScreen && { 'padding-left': '36px', 'padding-right': '36px' }"
-        style="display: flex; flex-direction: row;"
-    >
-        <section *ngIf="!isSmallScreen" style="display: flex; flex-direction: column; margin-top: 16px; margin: 12px;">
-            <mat-form-field floatLabel="never" style="margin-left: 8px; margin-right: 8px;">
-                <button mat-icon-button matPrefix>
-                    <mat-icon>search</mat-icon>
-                </button>
-                <input [(ngModel)]="term" matInput placeholder="Filter by name" type="text" />
-            </mat-form-field>
-            <mat-nav-list>
-                <h3>Theme</h3>
-                <mat-list-item (click)="iconStyle = ''" [class.active-theme]="iconStyle === ''">Regular</mat-list-item>
-                <mat-list-item
-                    (click)="iconStyle = 'library-outlined'"
-                    [class.active-theme]="iconStyle === 'library-outlined'"
-                    >Outlined
-                </mat-list-item>
-                <mat-list-item
-                    (click)="iconStyle = 'library-sharp'"
-                    [class.active-theme]="iconStyle === 'library-sharp'"
-                    >Sharp
-                </mat-list-item>
-                <mat-list-item
-                    (click)="iconStyle = 'library-two-tone'"
-                    [class.active-theme]="iconStyle === 'library-two-tone'"
-                    >Two Tone
-                </mat-list-item>
-                <mat-list-item
-                    (click)="iconStyle = 'library-round'"
-                    [class.active-theme]="iconStyle === 'library-round'"
-                    >Round
-                </mat-list-item>
-            </mat-nav-list>
-            <mat-form-field style="flex-grow: 1; margin-left: 6px;">
-                <h3>Category</h3>
-                <mat-select [(ngModel)]="category">
-                    <mat-option value="">All</mat-option>
-                    <mat-option value="undocumented">Undocumented</mat-option>
-                    <mat-option value="action">Action</mat-option>
-                    <mat-option value="alert">Alert</mat-option>
-                    <mat-option value="av">Av</mat-option>
-                    <mat-option value="communication">Communication</mat-option>
-                    <mat-option value="content">Content</mat-option>
-                    <mat-option value="device">Device</mat-option>
-                    <mat-option value="editor">Editor</mat-option>
-                    <mat-option value="file">File</mat-option>
-                    <mat-option value="hardware">Hardware</mat-option>
-                    <mat-option value="home">Home</mat-option>
-                    <mat-option value="image">Image</mat-option>
-                    <mat-option value="maps">Maps</mat-option>
-                    <mat-option value="navigation">Navigation</mat-option>
-                    <mat-option value="notifications">Notification</mat-option>
-                    <mat-option value="places">Places</mat-option>
-                    <mat-option value="social">Social</mat-option>
-                    <mat-option value="toggle">Toggle</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </section>
-        <section [class.is-small]="isSmallScreen" [ngClass]="iconStyle" style="width: 100%;">
-            <app-icon-container
-                *ngFor="let category of groupedByCategory | filterCategory: category"
-                [items]="category"
-                [term]="term"
-            ></app-icon-container>
-        </section>
-    </div>
+    </section>
+    <main [class.is-small]="isSmallScreen" [ngClass]="iconStyle">
+        <app-icon-container
+            *ngFor="let category of groupedByCategory | filterCategory: category"
+            [items]="category"
+            [term]="term"
+        ></app-icon-container>
+    </main>
 </div>
