@@ -1,4 +1,4 @@
-export const officialIconList = {
+export const officialIconListStatic = {
     host: 'fonts.gstatic.com',
     asset_url_pattern: '/s/i/{family}/{icon}/v{version}/{asset}',
     families: [
@@ -256,7 +256,7 @@ export const officialIconList = {
             name: 'add',
             version: 7,
             unsupported_families: [],
-            aliases: ['add_to_drive', 'add_moderator', 'add_link', 'add_chart', 'add_call'],
+            // aliases: ['add_to_drive', 'add_moderator', 'add_link', 'add_chart', 'add_call'],
             categories: ['content'],
             tags: ['+', 'add', 'create', 'new', 'plus'],
             sizes_px: [24],

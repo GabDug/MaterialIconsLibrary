@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterCategoryPipe } from './filter-category.pipe';
 import { IconContainerComponent } from './icon-container/icon-container.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { IconContainerComponent } from './icon-container/icon-container.componen
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         MatIconModule,
         FormsModule,
