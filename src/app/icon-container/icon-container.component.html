@@ -1,5 +1,4 @@
 <div *ngIf="items.length > 0" class="library-container">
-    <h2>{{ items[0].categories[0] | titlecase }}</h2>
     <div class="category-group">
         <app-icon-item
             *ngFor="
@@ -11,4 +10,5 @@
             [name]="icon.name"
         ></app-icon-item>
     </div>
+    <h2>{{ items[0].categories[0] | titlecase }}</h2>
 </div>

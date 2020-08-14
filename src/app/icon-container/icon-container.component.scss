@@ -9,18 +9,21 @@
   }
 }
 
-.category_name {
-  width: 100%;
-
-  &:only-child {
-    visibility: hidden;
-  }
-}
-
 .library-container {
-  margin-top: 24px;
   margin-left: 36px;
   flex-grow: 1;
+
+  // Reverse trick so we can use the sibling selector with :empty to hide the category name
+  display: flex;
+  flex-direction: column-reverse;
+
+  .category-group:empty + h2 {
+    display: none;
+  }
+
+  h2 {
+    margin-top: 24px;
+  }
 }
 
 :host-context(.is-small) {
@@ -29,9 +32,12 @@
   }
 
   .library-container {
-    margin-top: -4px;
     margin-left: auto;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  h2 {
+    margin-top: -4px;
   }
 }
