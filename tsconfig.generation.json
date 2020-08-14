@@ -1,0 +1,8 @@
+/* File for the icon list generation. */
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "types": ["node"]
+    },
+    "files": ["src/icon-data-generation/main.ts"]
+}

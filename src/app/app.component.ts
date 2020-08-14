@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { officialIconList } from './official_icon_list';
-import { allIconsList } from './all_icon_list';
-import { from, Observable } from 'rxjs';
-import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
+import { allIconsListStatic } from '../icon-data-generation/static_lists/all_icon_list';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -12,11 +10,9 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 })
 export class AppComponent implements OnInit {
     title = 'NgMatIcons';
-    officialIconList = officialIconList;
-    allIconList = allIconsList;
+    allIconList = allIconsListStatic;
     allIconDetails;
     term: string;
-    undocumentedIcons: string[] = [];
 
     groupedByCategory: any[];
 
@@ -26,7 +22,7 @@ export class AppComponent implements OnInit {
 
     isSmallScreen: boolean;
 
-    constructor(private breakpointObserver: BreakpointObserver) {}
+    constructor(private breakpointObserver: BreakpointObserver, private http: HttpClient) {}
 
     ngOnInit(): void {
         // this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
@@ -36,43 +32,14 @@ export class AppComponent implements OnInit {
                 this.isSmallScreen = state.matches;
             });
 
-        const officialIconNames = officialIconList.icons.map(x => x.name);
-        // console.log(officialIconNames);
-        this.undocumentedIcons = officialIconNames
-            .filter(x => !allIconsList.includes(x))
-            .concat(allIconsList.filter(x => !officialIconNames.includes(x)));
-        // console.log(this.undocumentedIcons);
-
-        this.undocumentedIcons.forEach(x => {
-            this.officialIconList.icons.push({ name: x, categories: ['undocumented'] } as any);
-        });
-        const iconsSource = from(this.officialIconList.icons);
-        const groupedByCategory$: Observable<any[]> = iconsSource.pipe(
-            groupBy(icon => icon.categories[0]),
-            mergeMap(category => category.pipe(toArray())),
-            toArray(),
-            map(iconGroup => iconGroup.sort(sortIconGroupAlphabetically))
+        this.http.get<Array<any>>('/assets/all-icons-category.json').subscribe(
+            x => {
+                this.groupedByCategory = x;
+                // console.log(x);
+            },
+            error => {
+                console.log(error);
+            }
         );
-
-        groupedByCategory$.subscribe(x => {
-            this.groupedByCategory = x;
-            // console.log(x);
-        });
     }
 }
-
-const sortIconGroupAlphabetically = (a, b) => {
-    if (a[0].categories[0] === 'undocumented') {
-        return -1;
-    }
-    if (b[0].categories[0] === 'undocumented') {
-        return 1;
-    }
-    if (a[0].categories[0] < b[0].categories[0]) {
-        return -1;
-    }
-    if (a[0].categories[0] > b[0].categories[0]) {
-        return 1;
-    }
-    return 0;
-};

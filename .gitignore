@@ -8,6 +8,7 @@
 /bazel-out
 
 # dependencies
+package-lock.json
 /node_modules
 
 # profiling files
@@ -44,3 +45,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+all-icons-category.json
+all-icons.json

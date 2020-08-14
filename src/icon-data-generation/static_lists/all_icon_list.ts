@@ -1,4 +1,4 @@
-export const allIconsList = [
+export const allIconsListStatic = [
     '1k_plus',
     '19mp',
     '18mp',
