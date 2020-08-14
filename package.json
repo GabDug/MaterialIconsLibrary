@@ -5,6 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "prebuild": "ts-node src/icon-data-generation/main.ts",
+        "postinstall": "ts-node src/icon-data-generation/main.ts",
         "build": "ng build",
         "build:production": "ng build --prod",
         "test": "ng test",
