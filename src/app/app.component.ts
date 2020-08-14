@@ -32,9 +32,14 @@ export class AppComponent implements OnInit {
                 this.isSmallScreen = state.matches;
             });
 
-        this.http.get<Array<any>>('/assets/all-icons-category.json').subscribe(x => {
-            this.groupedByCategory = x;
-            // console.log(x);
-        });
+        this.http.get<Array<any>>('/assets/all-icons-category.json').subscribe(
+            x => {
+                this.groupedByCategory = x;
+                // console.log(x);
+            },
+            error => {
+                console.log(error);
+            }
+        );
     }
 }

@@ -20,6 +20,7 @@ function main(): void {
     outputList = mergeLists(officialIcons, customIcons);
     outputList = mergeMissingIcons(outputList, fullList);
     outputList.sort(sortIconByNameAlphabetically);
+    outputList = removeUnusedAttributes(outputList);
 
     fs.writeFileSync(path.join(__dirname, '..', 'assets', 'all-icons.json'), JSON.stringify(outputList));
 
@@ -68,10 +69,20 @@ function mergeMissingIcons(IconItemList: IconItem[], fullList: string[]): IconIt
     // console.log(this.undocumentedIcons);
 
     missingIcons.forEach(x => {
-        IconItemList.push({ name: x, categories: ['latest'] } as any);
+        IconItemList.push({ name: x, categories: ['unsorted'] } as any);
     });
 
     return IconItemList;
+}
+
+function removeUnusedAttributes(array: IconItem[]): IconItem[] {
+    array.forEach(v => {
+        delete v.version;
+        delete v.aliasOf;
+        delete v.sizes_px;
+        delete v.unsupported_families;
+    });
+    return array;
 }
 
 function groupByCategory(iconList: IconItem[]): Observable<any[]> {
@@ -88,10 +99,10 @@ function groupByCategory(iconList: IconItem[]): Observable<any[]> {
 
 function sortIconGroupAlphabetically(a: IconItem[], b: IconItem[]): 0 | 1 | -1 {
     // TODO add latest too!
-    if (a[0].categories[0] === 'undocumented') {
+    if (a[0].categories[0] === 'unsorted') {
         return -1;
     }
-    if (b[0].categories[0] === 'undocumented') {
+    if (b[0].categories[0] === 'unsorted') {
         return 1;
     }
     if (a[0].categories[0] < b[0].categories[0]) {
