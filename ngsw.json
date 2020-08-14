@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1597432584587,
+  "timestamp": 1597432694609,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -29,6 +29,8 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/all-icons-category.json",
+        "/assets/all-icons.json",
         "/assets/icons/icon-128x128.png",
         "/assets/icons/icon-144x144.png",
         "/assets/icons/icon-184x184.png",
@@ -58,6 +60,8 @@
     }
   ],
   "hashTable": {
+    "/assets/all-icons-category.json": "c314d53fdb30044ac5a477ee69e93beb91955a1b",
+    "/assets/all-icons.json": "608d50b12298c14dfb79bcb4d823daae07a5eeb1",
     "/assets/icons/icon-128x128.png": "2db5e4d8523c7b59276f53108a0767b45356ef73",
     "/assets/icons/icon-144x144.png": "867ec2786148b5726077e31ab82dcd2677f52a3f",
     "/assets/icons/icon-184x184.png": "274dcf5f1436869fc684c7cd32c28a7eb0f2da89",
