@@ -1,5 +1,5 @@
 .filter-container-small {
-  padding: 16px;
+  padding: 1rem;
 
   .filter-search-field {
     display: block;
@@ -29,11 +29,11 @@
 .filter-container {
   display: flex;
   flex-direction: column;
-  margin: 12px;
+  margin: 0.75rem;
 
   .filter-search-field {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .filter-category-field {
@@ -46,10 +46,10 @@
     transition: background-color ease 200ms;
 
     .mat-list-item {
-      border-radius: 8px;
+      border-radius: 0.5rem;
 
       &:not(:last-child) {
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
       }
     }
 

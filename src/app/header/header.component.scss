@@ -1,9 +1,11 @@
 :host {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   display: flex;
   align-content: center;
+
+  width: 100vw; /* So the header doesn't jump when the scrollbar appears */
 
   background-color: var(--color-primary);
   color: var(--text-on-primary-darker);
@@ -17,8 +19,8 @@
 
   &-content {
     max-width: 700px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
     h1 {
       color: var(--text-on-primary);

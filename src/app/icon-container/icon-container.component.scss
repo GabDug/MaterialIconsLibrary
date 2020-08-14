@@ -1,6 +1,7 @@
 .category-group {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 136px);
+  grid-template-columns: repeat(auto-fill, 7.5rem);
+  grid-row-gap: 1rem;
   justify-content: space-between;
 
   &::after {
@@ -10,7 +11,7 @@
 }
 
 .library-container {
-  margin-left: 36px;
+  margin-left: 2.25rem;
   flex-grow: 1;
 
   // Reverse trick so we can use the sibling selector with :empty to hide the category name
@@ -22,7 +23,7 @@
   }
 
   h2 {
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 
@@ -33,11 +34,11 @@
 
   .library-container {
     margin-left: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   h2 {
-    margin-top: -4px;
+    margin-top: -1rem;
   }
 }
