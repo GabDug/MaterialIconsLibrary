@@ -58,7 +58,7 @@ $mat-light-theme-foreground: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$NgMatIcons-primary: mat-palette($mat-teal, 700);
+$NgMatIcons-primary: mat-palette($mat-teal, 800);
 $NgMatIcons-accent: mat-palette($mat-blue, A400);
 
 // The warn palette is optional (defaults to red).
@@ -93,7 +93,7 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   --color-primary: #{map-get($NgMatIcons-primary, 'default')};
   --text-on-primary: #fff;
-  --text-on-primary-darker: #e5e5e5;
+  --text-on-primary-darker: #e7e7e7;
 }
 
 .library-outlined {

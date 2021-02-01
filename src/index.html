@@ -3,16 +3,33 @@
     <head>
         <meta charset="utf-8" />
         <title>Material Icons Library</title>
+        <meta
+            content="See all the Material Design icons available, even the undocumented ones. Stay up-to-date, as the icons are updated automatically."
+            name="description"
+        />
         <base href="/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet" />
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
             rel="stylesheet"
         />
-        <link rel="manifest" href="manifest.webmanifest" />
-        <meta name="theme-color" content="#00796b" />
+        <link href="manifest.webmanifest" rel="manifest" />
+        <meta content="#00796b" name="theme-color" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Material Icons Library",
+                "author": {
+                    "@type": "Person",
+                    "name": "Gabriel Dugny"
+                },
+                "datePublished": "2020"
+            }
+        </script>
     </head>
     <body class="mat-typography">
         <app-root></app-root>
