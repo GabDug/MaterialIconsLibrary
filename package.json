@@ -17,7 +17,7 @@
     "repository": "github:Dugnychon/MaterialIconsLibrary",
     "bugs": "https://github.com/Dugnychon/MaterialIconsLibrary/issues",
     "engines": {
-        "node": ">=12.16.2 <13.0.0"
+        "node": ">=14.15.0"
     },
     "dependencies": {
         "@angular/animations": "~10.0.5",
