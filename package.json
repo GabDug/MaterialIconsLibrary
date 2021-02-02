@@ -2,22 +2,24 @@
     "name": "ng-mat-icons",
     "version": "0.0.1",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "prebuild": "ts-node src/icon-data-generation/main.ts",
-        "postinstall": "ts-node src/icon-data-generation/main.ts",
         "build": "ng build",
         "build:production": "ng build --prod",
-        "test": "ng test",
+        "e2e": "ng e2e",
+        "generate-icon-list": "tsc src/icon-data-generation/main.ts && node src/icon-data-generation/main.js ",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "ng": "ng",
+        "postinstall": "yarn run generate-icon-list",
+        "prebuild": "yarn run generate-icon-list",
+        "start": "ng serve",
+        "test": "ng test"
     },
     "private": true,
     "license": "MIT",
     "repository": "github:Dugnychon/MaterialIconsLibrary",
     "bugs": "https://github.com/Dugnychon/MaterialIconsLibrary/issues",
     "engines": {
-        "node": ">=14.10.0 || >=12.13.0"
+        "node": ">=14.10.0 || >=12.13.0",
+        "yarn": ">=1.20.0"
     },
     "dependencies": {
         "@angular/animations": "~11.1.1",

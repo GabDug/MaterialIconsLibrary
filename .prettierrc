@@ -9,10 +9,7 @@
     "arrowParens": "avoid",
     "overrides": [
         {
-            "files": [
-                ".*",
-                "*.json"
-            ],
+            "files": [".prettierrc", "*.json"],
             "options": {
                 "parser": "json"
             }
@@ -22,12 +19,9 @@
             "options": {
                 "tabWidth": 1
             }
-        } , {
-            "files":  [
-                "*.scss",
-                "*.sass",
-                "*.css"
-            ],
+        },
+        {
+            "files": ["*.scss", "*.sass", "*.css"],
             "options": {
                 "tabWidth": 2
             }

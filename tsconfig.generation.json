@@ -1,8 +1,19 @@
 /* File for the icon list generation. */
 {
     "extends": "./tsconfig.json",
+    "compileOnSave": false,
     "compilerOptions": {
-        "types": ["node"]
+        "module": "ESNext",
+        "outDir": "out-tsc/generation",
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "types": ["node"],
+        "strict": true,
+        "lib": ["es2020"]
     },
     "files": ["src/icon-data-generation/main.ts"]
 }
