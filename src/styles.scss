@@ -1,24 +1,24 @@
+@use '~@angular/material' as mat;
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
 $fontConfig: (
   font-family:
     'Roboto,BlinkMacSystemFont,-apple-system,system-ui,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
-  display-4: mat-typography-level(5rem, 7rem, 300, $letter-spacing: -0.0134em),
-  display-3: mat-typography-level(3.5rem, 3.5rem, 400, $letter-spacing: -0.0089em),
-  display-2: mat-typography-level(2.8125rem, 3rem, 400, $letter-spacing: 0em),
-  display-1: mat-typography-level(2.125rem, 2.5rem, 400, $letter-spacing: 0.0074em),
-  headline: mat-typography-level(1.5rem, 2rem, 400, $letter-spacing: 0em),
-  title: mat-typography-level(1.25rem, 2rem, 500, $letter-spacing: 0.0075em),
-  subheading-2: mat-typography-level(1rem, 1.75rem, 400, $letter-spacing: 0.0094em),
-  subheading-1: mat-typography-level(0.9375rem, 1.5rem, 500, $letter-spacing: 0.0067em),
-  body-2: mat-typography-level(0.875rem, 1.5rem, 500, 0.0179em),
-  body-1: mat-typography-level(0.875rem, 1rem, 400, 0.0179em),
-  button: mat-typography-level(0.875rem, 0.875rem, 500, 0.0893em),
-  caption: mat-typography-level(0.75rem, 1.25rem, 400, 0.0333em),
-  input: mat-typography-level(inherit, 1.125, 400, 0.0179em),
+  display-4: mat.define-typography-level(5rem, 7rem, 300, $letter-spacing: -0.0134em),
+  display-3: mat.define-typography-level(3.5rem, 3.5rem, 400, $letter-spacing: -0.0089em),
+  display-2: mat.define-typography-level(2.8125rem, 3rem, 400, $letter-spacing: 0em),
+  display-1: mat.define-typography-level(2.125rem, 2.5rem, 400, $letter-spacing: 0.0074em),
+  headline: mat.define-typography-level(1.5rem, 2rem, 400, $letter-spacing: 0em),
+  title: mat.define-typography-level(1.25rem, 2rem, 500, $letter-spacing: 0.0075em),
+  subheading-2: mat.define-typography-level(1rem, 1.75rem, 400, $letter-spacing: 0.0094em),
+  subheading-1: mat.define-typography-level(0.9375rem, 1.5rem, 500, $letter-spacing: 0.0067em),
+  body-2: mat.define-typography-level(0.875rem, 1.5rem, 500, 0.0179em),
+  body-1: mat.define-typography-level(0.875rem, 1rem, 400, 0.0179em),
+  button: mat.define-typography-level(0.875rem, 0.875rem, 500, 0.0893em),
+  caption: mat.define-typography-level(0.75rem, 1.25rem, 400, 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 0.0179em),
 );
 
 // Foreground Elements
@@ -26,47 +26,47 @@ $fontConfig: (
 // Light Theme Text
 $dark-text: #000000;
 $dark-primary-text: rgba($dark-text, 0.87);
-$dark-accent-text: rgba($dark-primary-text, 0.54);
-$dark-disabled-text: rgba($dark-primary-text, 0.38);
-$dark-dividers: rgba($dark-primary-text, 0.12);
-$dark-focused: rgba($dark-primary-text, 0.12);
+$dark-accent-text: rgba(rgba(black, 0.87), 0.54);
+$dark-disabled-text: rgba(rgba(black, 0.87), 0.38);
+$dark-dividers: rgba(rgba(black, 0.87), 0.12);
+$dark-focused: rgba(rgba(black, 0.87), 0.12);
 
-$mat-light-theme-foreground: (
+mat.$light-theme-foreground-palette: (
   base: black,
-  divider: $dark-dividers,
-  dividers: $dark-dividers,
-  disabled: $dark-disabled-text,
+  divider: rgba(black, 0.12),
+  dividers: rgba(black, 0.12),
+  disabled: rgba(black, 0.38),
   disabled-button: rgba($dark-text, 0.26),
-  disabled-text: $dark-disabled-text,
+  disabled-text: rgba(black, 0.38),
   elevation: black,
   secondary-text: $dark-accent-text,
-  hint-text: $dark-disabled-text,
+  hint-text: rgba(black, 0.38),
   accent-text: $dark-accent-text,
   icon: $dark-accent-text,
   icons: $dark-accent-text,
-  text: $dark-primary-text,
-  slider-min: $dark-primary-text,
+  text: rgba(black, 0.87),
+  slider-min: rgba(black, 0.87),
   slider-off: rgba($dark-text, 0.26),
-  slider-off-active: $dark-disabled-text,
+  slider-off-active: rgba(black, 0.38)
 );
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core($fontConfig);
+@include mat.core($fontConfig);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$NgMatIcons-primary: mat-palette($mat-teal, 800);
-$NgMatIcons-accent: mat-palette($mat-blue, A400);
+$NgMatIcons-primary: mat.define-palette(mat.$teal-palette, 800);
+$NgMatIcons-accent: mat.define-palette(mat.$blue-palette, A400);
 
 // The warn palette is optional (defaults to red).
-$NgMatIcons-warn: mat-palette($mat-red);
+$NgMatIcons-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$NgMatIcons-theme: mat-light-theme(
+$NgMatIcons-theme: mat.define-light-theme(
   (
     color: (
       primary: $NgMatIcons-primary,
@@ -79,7 +79,7 @@ $NgMatIcons-theme: mat-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($NgMatIcons-theme);
+@include mat.all-component-themes($NgMatIcons-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
