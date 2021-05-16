@@ -1,6 +1,6 @@
 {
     "name": "ng-mat-icons",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "scripts": {
         "build": "ng build",
         "build:production": "ng build --configuration production",
