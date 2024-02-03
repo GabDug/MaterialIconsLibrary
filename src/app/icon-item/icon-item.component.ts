@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Clipboard } from '@angular/cdk/clipboard';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import IconItem from '../icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-icon-item',

@@ -1,4 +1,38 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$NgMatIcons-primary: mat.define-palette(mat.$teal-palette);
+$NgMatIcons-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$NgMatIcons-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$NgMatIcons-theme: mat.define-light-theme((
+  color: (
+    primary: $NgMatIcons-primary,
+    accent: $NgMatIcons-accent,
+    warn: $NgMatIcons-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($NgMatIcons-theme);
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 // Plus imports for other components in your app.
@@ -61,8 +95,8 @@ mat.$light-theme-foreground-palette: (
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
 //    `@include mat.legacy-typography-hierarchy($fontConfig);`
-@include mat.all-legacy-component-typographies($fontConfig);
-@include mat.legacy-core();
+// @include mat.legacy-typography-hierarchy($fontConfig);
+@include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -88,7 +122,7 @@ $NgMatIcons-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-legacy-component-themes($NgMatIcons-theme);
+// @include mat.legacy-component-themes($NgMatIcons-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -128,3 +162,6 @@ body {
     font-family: 'Material Icons Sharp' !important;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

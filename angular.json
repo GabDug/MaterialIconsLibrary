@@ -22,8 +22,14 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
-                        "styles": ["src/styles.scss"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/manifest.webmanifest"
+                        ],
+                        "styles": [
+                            "src/styles.scss"
+                        ],
                         "scripts": [],
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -67,18 +73,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "NgMatIcons:build"
+                        "buildTarget": "NgMatIcons:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "NgMatIcons:build:production"
+                            "buildTarget": "NgMatIcons:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "NgMatIcons:build"
+                        "buildTarget": "NgMatIcons:build"
                     }
                 },
                 "test": {
@@ -88,16 +94,28 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
-                        "styles": ["src/styles.scss"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/manifest.webmanifest"
+                        ],
+                        "styles": [
+                            "src/styles.scss"
+                        ],
                         "scripts": []
                     }
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
-                        "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
-                        "exclude": ["**/node_modules/**"]
+                        "tsConfig": [
+                            "tsconfig.app.json",
+                            "tsconfig.spec.json",
+                            "e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
                     }
                 },
                 "e2e": {
@@ -116,6 +134,6 @@
         }
     },
     "cli": {
-      "analytics": false
+        "analytics": false
     }
 }

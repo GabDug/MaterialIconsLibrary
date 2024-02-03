@@ -1,9 +1,9 @@
 .filter-container-small {
   padding: 1rem;
 
-  .filter-search-field {
-    display: block;
-  }
+//   .filter-search-field {
+//     display: block;
+//   }
 
   .filter-row {
     display: flex;
@@ -30,16 +30,8 @@
   display: flex;
   flex-direction: column;
   margin: 0.75rem;
+  margin-top: 1.25rem;
 
-  .filter-search-field {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-  .filter-category-field {
-    flex-grow: 1;
-    margin-left: 6px;
-  }
 
   // Theme selector
   .mat-nav-list {
@@ -53,12 +45,14 @@
       }
     }
 
-    .active-theme {
-      background: #48a697;
-      color: white;
-    }
+
   }
 }
+
+// mat-list-item[ng-reflect-activated=true] {
+//       background: #48a697;
+//       color: white;
+//     }
 
 main {
   width: 100%;
