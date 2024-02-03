@@ -115,5 +115,7 @@
             }
         }
     },
-    "defaultProject": "NgMatIcons"
+    "cli": {
+      "analytics": false
+    }
 }
